@@ -9,6 +9,9 @@ curl "http://localhost:4741/posts" \
     "post": {
       "title": "'"${TITLE}"'",
       "body": "'"${BODY}"'",
+      "address": "'"${ADRS}"'",
+      "lat": "'"${LAT}"'",
+      "lng": "'"${LNG}"'",
       "image_1": "'"${IMG1}"'",
       "image_2": "'"${IMG2}"'",
       "image_3": "'"${IMG3}"'"
