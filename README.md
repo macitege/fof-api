@@ -41,17 +41,17 @@ Although everything runs correctly in the app, couple things are omitted to be a
 
 ### Routes
 
-Verb|	URI Pattern |	Request Body |	Headers	| Action
----|---|---|---
-POST|	/sign-up|	credentials|	N/A|	user sign-up
-POST|	/sign-in|	credentials|	N/A	|user sign-in
-DELETE|	/sign-out	|N/A	|Token	|user sign-out
-PATCH|	/change-password|	passwords	|Token|	change-password
-GET|	/posts|	N/A|	N/A|	index posts
-GET|	/posts/:id|	N/A	|Token|	show single post
-POST|	/posts|	post: {}|	Token	|create post
-PATCH|	/posts/:id|	post delta|	Token|	update post
-DELETE|	/posts/:id|	N/A	|Token|	remove post
+| Verb          | URI Pattern   | Request Body  | Headers  | Action        |
+| ------------- |:-------------:|:-------------:|:---------|:--------------|
+| POST          |	/sign-up      |	credentials   |	N/A      |user sign-up   |
+| POST          |	/sign-in      |	credentials   |	N/A	     |user sign-in    |
+| DELETE        |	/sign-out	    |N/A	          |Token	   |user sign-out|
+| PATCH         |	/change-password|	passwords	  |Token    |	change-password|
+| GET|	/posts|	N/A|	N/A|	index posts|
+| GET|	/posts/:id|	N/A	|Token|	show single post|
+| POST|	/posts|	post: {}|	Token	|create post|
+| PATCH|	/posts/:id|	post delta|	Token|	update post|
+| DELETE|	/posts/:id|	N/A	|Token|	remove post|
 
 
 ### Wireframes and user stories
