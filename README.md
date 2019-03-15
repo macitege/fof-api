@@ -1,6 +1,5 @@
-# F.O.F. | Boston
-## Free Offerings of Food
-##### Web Application created by M. Ege ERCAN
+## F.O.F. | Boston (Free Offerings of Food)
+##### A web application created by M. Ege ERCAN for General Assembly Boston's Web Development Immersive Bootcamp Program's capstone project
 ---
 Note: This application is providing database api support for the F.O.F. web application.
 
