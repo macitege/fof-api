@@ -56,7 +56,8 @@ class PostsController < OpenReadController
       :user,
       :address,
       :lat,
-      :lng
+      :lng,
+      :username
     )
   end
 end

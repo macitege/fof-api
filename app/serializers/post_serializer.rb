@@ -7,5 +7,6 @@ class PostSerializer < ActiveModel::Serializer
              :lng,
              :created_at,
              :updated_at,
-             :user_id
+             :user_id,
+             :username
 end
