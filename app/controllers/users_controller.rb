@@ -1,9 +1,11 @@
 # frozen_string_literal: true
+require 'pry'
 
 class UsersController < ProtectedController
   skip_before_action :authenticate, only: %i[signup signin]
 
   # POST '/sign-up'
+  # TODO: SIGN UP DOES NOT GIVE EXPECTED ERROR IF USERNAME IS NOT UNIQUE
   def signup
     user = User.create(user_creds)
     if user.valid?
@@ -16,8 +18,11 @@ class UsersController < ProtectedController
   # POST '/sign-in'
   def signin
     creds = user_creds
-    if (user = User.authenticate creds[:email],
-                                 creds[:password])
+    if creds[:email] == '' && creds[:username]
+      user_email = User.find_by(username: creds[:username])
+      creds[:email] = user_email.email
+    end
+    if (user = User.authenticate(creds[:email], creds[:password]))
       render json: user, serializer: UserLoginSerializer, root: 'user'
     else
       head :unauthorized
@@ -50,7 +55,7 @@ class UsersController < ProtectedController
 
   def user_creds
     params.require(:credentials)
-          .permit(:email, :password, :password_confirmation)
+          .permit(:email, :password, :username, :password_confirmation)
   end
 
   def pw_creds

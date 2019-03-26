@@ -18,6 +18,8 @@ module Authentication
     has_secure_password
     before_create :set_token
     after_find :fix_up_token
+    #TODO: DELETE LINE 22
+    validates :username, uniqueness: true
     validates :email, uniqueness: true
     validates :email, presence: true
     validates :password_confirmation, presence: true, on: :create
